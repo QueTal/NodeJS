@@ -1,0 +1,20 @@
+doctype html
+html    
+    head
+        // 타입을 정하고 싶으면 ()안에 쓰기
+        meta(charset='utf-8')
+    body 
+            // form(action='form_receiver' method='get') 이랑 동일
+            // default가 method='get'임 => querystring이 붙음
+            // 반면에 method='post'로 하면 querystring이 붙지 않음     
+        form(action="/form_receiver" method='post') 
+            p
+                // 한줄 입력받기
+                input(type='text' name='title')
+            p
+                //여러줄 입력받기
+                textarea(name='description')
+            p
+                //제출버튼 만들기
+                // 어디로 보낼지는 아직 
+                input(type='submit')

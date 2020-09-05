@@ -1,0 +1,25 @@
+doctype html
+html    
+    head 
+        //utf-8로 웹페이지를 해석해야함을 웹브라우저에게 알려줌
+        meta(charset='utf-8')
+    body    
+        h1 
+            a(href='/topic') Server Side JavaScript
+        ul
+            each topic in topics
+                li
+                    // = 은 변수를 출력한다는 의미
+                    a(href='/topic/'+topic)= topic
+    
+        article
+            // 사용자가 입력한 정보를 post방식으로 topic이라는 경로로 전달
+            // 사용자가 입력한 정보를 어디로 전달할 것인가 = action
+            form(action='/topic' method='post')
+                p
+                    // placeholder는 입력전 미리 들어가있는 값, 실행하면 없어짐
+                    input(type ='text' name='title' placeholder='title')
+                p   
+                    textarea(name='description' placeholder='description')
+                p   
+                    input(type='submit')
